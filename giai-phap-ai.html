@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Giải pháp AI — Đưa AI vào bài toán tạo ra giá trị thực tế | VIETD</title>
+<meta name="description" content="VIETD đồng hành cùng doanh nghiệp và tổ chức trong xác định cơ hội ứng dụng, tối ưu quy trình và triển khai các giải pháp AI phù hợp với nhu cầu vận hành thực tế.">
+<meta name="theme-color" content="#981B22">
+<link rel="icon" href="assets/vietd-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add("js");</script>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body id="top">
+
+<header class="site-header">
+  <div class="wrap hdr-inner">
+    <a class="hdr-brand" href="index.html" aria-label="VIETD — Trang chủ">
+      <img src="assets/vietd-logo.png" alt="Logo VIETD">
+      <span class="bt"><b>VIETD</b><span>Beyond Learning</span></span>
+    </a>
+    <nav class="nav" id="main-nav" aria-label="Điều hướng chính">
+      <div class="nav-item">
+        <a class="nav-link" href="ve-vietd.html" aria-haspopup="true">Về VIETD
+          <svg class="cv" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="dropdown">
+          <a href="ve-vietd.html#tong-quan">Tổng quan <small>Giới thiệu · Sứ mệnh · Tầm nhìn · Giá trị cốt lõi</small></a>
+          <a href="ve-vietd.html#lanh-dao">Ban lãnh đạo &amp; Chuyên gia</a>
+          <a href="ve-vietd.html#he-sinh-thai">Hệ sinh thái &amp; Pháp lý</a>
+          <a href="ve-vietd.html#doi-tac">Đối tác &amp; Hoạt động</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="dao-tao-ai.html" aria-haspopup="true">Đào tạo AI
+          <svg class="cv" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="dropdown">
+          <a href="dao-tao-ai.html#everyone">AI for Everyone</a>
+          <a href="dao-tao-ai.html#professionals">AI for Professionals</a>
+          <a href="dao-tao-ai.html#leaders">AI for Leaders</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="giai-phap-ai.html" aria-haspopup="true">Giải pháp AI
+          <svg class="cv" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="dropdown">
+          <a href="#sales-marketing">Sales &amp; Marketing <small>Tăng tốc từ insight đến tăng trưởng</small></a>
+          <a href="#people-learning">People &amp; Learning <small>Quản trị &amp; phát triển con người</small></a>
+          <a href="#operations">Operations <small>Tối ưu quy trình, giảm lặp lại</small></a>
+          <a href="#customer-experience">Customer Experience <small>Nâng cao trải nghiệm</small></a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="tin-tuc.html" aria-haspopup="true">Tin tức &amp; Chia sẻ
+          <svg class="cv" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="dropdown">
+          <a href="tin-tuc.html#tin-vietd">Tin tức VIETD</a>
+          <a href="tin-tuc.html#kien-thuc">Kiến thức &amp; Góc nhìn AI</a>
+        </div>
+      </div>
+      <button class="btn btn-primary nav-cta" data-consult type="button">Liên hệ với chúng tôi</button>
+    </nav>
+    <div class="hdr-actions">
+      <button class="btn btn-primary btn-sm" data-consult type="button">Liên hệ với chúng tôi</button>
+      <button class="nav-toggle" aria-label="Mở menu" aria-expanded="false" aria-controls="main-nav"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- 01. HERO -->
+<section class="page-head">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="index.html">Trang chủ</a><span>/</span><span class="cur">Giải pháp AI</span>
+    </nav>
+    <span class="eyebrow">Giải pháp AI</span>
+    <h1 class="h1">Đưa AI vào những bài toán tạo ra giá trị thực tế</h1>
+    <p class="lead" style="max-width:72ch">
+      VIETD đồng hành cùng doanh nghiệp và tổ chức trong xác định cơ hội ứng dụng,
+      tối ưu quy trình và triển khai các giải pháp AI phù hợp với nhu cầu vận hành thực tế.
+    </p>
+    <div class="btn-row">
+      <button class="btn btn-primary" data-consult data-context="solution" type="button" style="background:#fff;color:var(--burgundy)">Liên hệ với chúng tôi</button>
+      <a class="btn btn-ghost-lt" href="#nhom-giai-phap">Xem nhóm giải pháp</a>
+    </div>
+    <div class="hero-pillars" style="margin-top:var(--sp-4)">
+      <span class="chip">Sales &amp; Marketing</span>
+      <span class="chip">People &amp; Learning</span>
+      <span class="chip">Operations</span>
+      <span class="chip">Customer Experience</span>
+    </div>
+  </div>
+</section>
+
+<!-- 02. ĐỊNH HƯỚNG GIẢI PHÁP -->
+<section class="section section--white">
+  <div class="wrap">
+    <div class="split split-narrow">
+      <div class="rv">
+        <span class="eyebrow">VIETD AI Solutions</span>
+        <h2 class="h2">Không bắt đầu từ công nghệ.<br>Bắt đầu từ bài toán.</h2>
+        <hr class="rule">
+      </div>
+      <div class="rv rv-d1">
+        <p class="lead mb-3">
+          Thay vì triển khai AI như những công cụ rời rạc, VIETD tiếp cận từ mục tiêu,
+          quy trình và nhu cầu thực tế của từng tổ chức.
+        </p>
+        <p class="lead">
+          Giải pháp có thể kết hợp AI, workflow, automation, AI Agent và nền tảng số
+          tùy theo từng bài toán cụ thể.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03. CÁC NHÓM GIẢI PHÁP -->
+<section class="section section--ivory" id="nhom-giai-phap">
+  <div class="wrap">
+    <div class="center mb-4" style="margin-bottom:var(--sp-5)">
+      <span class="eyebrow eyebrow--center">Các nhóm giải pháp</span>
+      <h2 class="h2">Bốn nhóm bài toán VIETD tập trung giải quyết</h2>
+    </div>
+
+    <div class="grid g-2">
+      <!-- 01 SALES & MARKETING -->
+      <article class="sol rv" id="sales-marketing">
+        <div class="sol-h">
+          <div class="sol-h-left">
+            <span class="sol-n">01</span>
+            <div class="sol-ic">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M18 20V10M12 20V4M6 20v-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 8l5-5 5 4 6-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <div class="sol-h-meta">
+            <span class="sol-cat">NHÓM GIẢI PHÁP</span>
+            <h3>Sales &amp; Marketing</h3>
+          </div>
+        </div>
+        <p style="font-weight:600;color:var(--charcoal);font-size:var(--fs-sm);margin-bottom:.6rem">Tăng tốc từ insight đến tăng trưởng</p>
+        <p>
+          Ứng dụng AI để hỗ trợ đội ngũ Sales &amp; Marketing trong nghiên cứu,
+          xây dựng nội dung, quản lý thông tin và tối ưu các hoạt động tăng trưởng.
+        </p>
+        <span class="eyebrow" style="margin-bottom:.6rem">Các bài toán có thể triển khai</span>
+        <ul class="sol-tasks">
+          <li>Nghiên cứu thị trường và khách hàng</li>
+          <li>Phân tích insight</li>
+          <li>Xây dựng chiến lược và kế hoạch nội dung</li>
+          <li>Sản xuất và quản lý content</li>
+          <li>Sales support</li>
+          <li>Quản lý và khai thác lead</li>
+          <li>Báo cáo và phân tích hiệu quả</li>
+          <li>Workflow &amp; Automation</li>
+          <li>AI Agent hỗ trợ Sales / Marketing</li>
+        </ul>
+        <div class="sol-goal">
+          <div class="sol-goal-head">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.33 4L6 11.33 2.67 8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Mục tiêu giá trị</span>
+          </div>
+          <p>Giảm thời gian xử lý công việc, tăng khả năng khai thác dữ liệu và giúp đội ngũ tập trung nhiều hơn vào các hoạt động tạo ra giá trị.</p>
+        </div>
+        <button class="tlink" data-consult data-context="solution" type="button" style="background:none;border:0;padding:0;cursor:pointer;font-family:inherit">
+          Tìm hiểu Sales &amp; Marketing
+          <svg class="arw" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </article>
+
+      <!-- 02 PEOPLE & LEARNING -->
+      <article class="sol rv rv-d1" id="people-learning">
+        <div class="sol-h">
+          <div class="sol-h-left">
+            <span class="sol-n">02</span>
+            <div class="sol-ic">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <div class="sol-h-meta">
+            <span class="sol-cat">NHÓM GIẢI PHÁP</span>
+            <h3>People &amp; Learning</h3>
+          </div>
+        </div>
+        <p style="font-weight:600;color:var(--charcoal);font-size:var(--fs-sm);margin-bottom:.6rem">Nâng cao hiệu quả quản trị và phát triển con người</p>
+        <p>
+          Ứng dụng AI trong quản trị nhân sự, đào tạo và quản trị tri thức nhằm giúp
+          tổ chức khai thác tốt hơn dữ liệu, kiến thức và năng lực nội bộ.
+        </p>
+        <span class="eyebrow" style="margin-bottom:.6rem">Các bài toán có thể triển khai</span>
+        <ul class="sol-tasks">
+          <li>Hỗ trợ tuyển dụng</li>
+          <li>Xây dựng và chuẩn hóa tài liệu nhân sự</li>
+          <li>Đào tạo và phát triển năng lực</li>
+          <li>Xây dựng nội dung học tập</li>
+          <li>Quản trị tri thức nội bộ</li>
+          <li>Tra cứu chính sách và tài liệu</li>
+          <li>Internal AI Assistant</li>
+          <li>Knowledge Agent</li>
+          <li>Workflow cho HR &amp; Learning</li>
+        </ul>
+        <div class="sol-goal">
+          <div class="sol-goal-head">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.33 4L6 11.33 2.67 8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Mục tiêu giá trị</span>
+          </div>
+          <p>Giúp thông tin và tri thức trong tổ chức được chuẩn hóa, dễ truy cập và có khả năng tái sử dụng.</p>
+        </div>
+        <button class="tlink" data-consult data-context="solution" type="button" style="background:none;border:0;padding:0;cursor:pointer;font-family:inherit">
+          Tìm hiểu People &amp; Learning
+          <svg class="arw" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </article>
+
+      <!-- 03 OPERATIONS -->
+      <article class="sol rv" id="operations">
+        <div class="sol-h">
+          <div class="sol-h-left">
+            <span class="sol-n">03</span>
+            <div class="sol-ic">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+          </div>
+          <div class="sol-h-meta">
+            <span class="sol-cat">NHÓM GIẢI PHÁP</span>
+            <h3>Operations</h3>
+          </div>
+        </div>
+        <p style="font-weight:600;color:var(--charcoal);font-size:var(--fs-sm);margin-bottom:.6rem">Tối ưu quy trình. Giảm công việc lặp lại.</p>
+        <p>
+          Ứng dụng AI vào những hoạt động vận hành có khối lượng xử lý lớn,
+          nhiều bước thủ công hoặc phụ thuộc vào việc tổng hợp và luân chuyển thông tin.
+        </p>
+        <span class="eyebrow" style="margin-bottom:.6rem">Các bài toán có thể triển khai</span>
+        <ul class="sol-tasks">
+          <li>Xử lý và tổng hợp tài liệu</li>
+          <li>Chuẩn hóa workflow</li>
+          <li>Tự động hóa các tác vụ lặp lại</li>
+          <li>Báo cáo và tổng hợp dữ liệu</li>
+          <li>Quản trị thông tin nội bộ</li>
+          <li>Dashboard và công cụ nghiệp vụ</li>
+          <li>AI Assistant</li>
+          <li>AI Agent theo quy trình</li>
+          <li>Web App phục vụ vận hành</li>
+        </ul>
+        <div class="sol-goal">
+          <div class="sol-goal-head">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.33 4L6 11.33 2.67 8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Mục tiêu giá trị</span>
+          </div>
+          <p>Giúp tổ chức giảm thao tác thủ công, chuẩn hóa quy trình và nâng cao khả năng kiểm soát vận hành.</p>
+        </div>
+        <button class="tlink" data-consult data-context="solution" type="button" style="background:none;border:0;padding:0;cursor:pointer;font-family:inherit">
+          Tìm hiểu Operations
+          <svg class="arw" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </article>
+
+      <!-- 04 CUSTOMER EXPERIENCE -->
+      <article class="sol rv rv-d1" id="customer-experience">
+        <div class="sol-h">
+          <div class="sol-h-left">
+            <span class="sol-n">04</span>
+            <div class="sol-ic">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <div class="sol-h-meta">
+            <span class="sol-cat">NHÓM GIẢI PHÁP</span>
+            <h3>Customer Experience</h3>
+          </div>
+        </div>
+        <p style="font-weight:600;color:var(--charcoal);font-size:var(--fs-sm);margin-bottom:.6rem">Nâng cao trải nghiệm trên từng điểm chạm</p>
+        <p>
+          Kết hợp AI và nền tảng số để giúp doanh nghiệp, tổ chức nâng cao chất lượng
+          tương tác, cung cấp thông tin và phục vụ khách hàng.
+        </p>
+        <span class="eyebrow" style="margin-bottom:.6rem">Các bài toán có thể triển khai</span>
+        <ul class="sol-tasks">
+          <li>Website &amp; Web App</li>
+          <li>UX/UI</li>
+          <li>Customer Journey</li>
+          <li>Hệ thống tra cứu thông tin</li>
+          <li>AI Chat / AI Assistant</li>
+          <li>Customer Support Agent</li>
+          <li>Cá nhân hóa trải nghiệm</li>
+          <li>Tự động hóa tương tác</li>
+          <li>Nền tảng số tích hợp AI</li>
+        </ul>
+        <div class="sol-goal">
+          <div class="sol-goal-head">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.33 4L6 11.33 2.67 8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Mục tiêu giá trị</span>
+          </div>
+          <p>Tạo ra trải nghiệm nhanh hơn, nhất quán hơn và thuận tiện hơn trên các điểm chạm số.</p>
+        </div>
+        <button class="tlink" data-consult data-context="solution" type="button" style="background:none;border:0;padding:0;cursor:pointer;font-family:inherit">
+          Tìm hiểu Customer Experience
+          <svg class="arw" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 04. PHƯƠNG PHÁP TRIỂN KHAI -->
+<!-- Brief: framework riêng cho trang Giải pháp (DISCOVER→DESIGN→BUILD→DEPLOY),
+     thay vì lặp lại LEARN→APPLY→BUILD→SCALE của Trang chủ. -->
+<section class="section section--blue">
+  <div class="wrap">
+    <div class="split split-wide" style="align-items:end">
+      <div class="rv">
+        <span class="eyebrow">VIETD AI Solution Approach</span>
+        <h2 class="h2">Từ bài toán đến giải pháp có thể vận hành</h2>
+      </div>
+      <p class="lead rv rv-d1">
+        Một lộ trình bốn bước, bắt đầu từ việc hiểu đúng bài toán và kết thúc
+        bằng giải pháp đã được kiểm chứng trong điều kiện thực tế.
+      </p>
+    </div>
+
+    <div class="solution-process mt-6" style="margin-top:var(--sp-6)">
+      <div class="solution-process-grid">
+        <!-- 01 DISCOVER -->
+        <article class="sol-proc-step rv">
+          <div class="sol-proc-top">
+            <span class="sol-proc-num">01</span>
+            <div class="sol-proc-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="7"/>
+                <path d="M21 21l-4.35-4.35"/>
+                <path d="M11 8a3 3 0 0 0-3 3"/>
+              </svg>
+            </div>
+          </div>
+          <div class="sol-proc-body">
+            <h3 class="sol-proc-name">DISCOVER</h3>
+            <span class="sol-proc-role">Hiểu bài toán</span>
+            <p class="sol-proc-desc">Xác định mục tiêu, hiện trạng, quy trình và những điểm cần cải thiện.</p>
+          </div>
+        </article>
+
+        <!-- 02 DESIGN -->
+        <article class="sol-proc-step rv rv-d1">
+          <div class="sol-proc-top">
+            <span class="sol-proc-num">02</span>
+            <div class="sol-proc-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <path d="M3 9h18M9 21V9"/>
+              </svg>
+            </div>
+          </div>
+          <div class="sol-proc-body">
+            <h3 class="sol-proc-name">DESIGN</h3>
+            <span class="sol-proc-role">Thiết kế giải pháp</span>
+            <p class="sol-proc-desc">Xác định use case, phạm vi và mô hình triển khai phù hợp.</p>
+          </div>
+        </article>
+
+        <!-- 03 BUILD -->
+        <article class="sol-proc-step rv rv-d2">
+          <div class="sol-proc-top">
+            <span class="sol-proc-num">03</span>
+            <div class="sol-proc-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+              </svg>
+            </div>
+          </div>
+          <div class="sol-proc-body">
+            <h3 class="sol-proc-name">BUILD</h3>
+            <span class="sol-proc-role">Xây dựng &amp; kiểm chứng</span>
+            <p class="sol-proc-desc">Phát triển giải pháp, workflow hoặc prototype và kiểm chứng trong điều kiện thực tế.</p>
+          </div>
+        </article>
+
+        <!-- 04 DEPLOY -->
+        <article class="sol-proc-step rv rv-d3">
+          <div class="sol-proc-top">
+            <span class="sol-proc-num">04</span>
+            <div class="sol-proc-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+            </div>
+          </div>
+          <div class="sol-proc-body">
+            <h3 class="sol-proc-name">DEPLOY</h3>
+            <span class="sol-proc-role">Triển khai &amp; hoàn thiện</span>
+            <p class="sol-proc-desc">Đưa giải pháp vào vận hành, bàn giao và tiếp tục tối ưu khi cần.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="fw-chain rv" style="color:var(--gold-light)">
+      <span>DISCOVER</span><span class="sep" style="color:rgba(255,255,255,.4)">→</span>
+      <span>DESIGN</span><span class="sep" style="color:rgba(255,255,255,.4)">→</span>
+      <span>BUILD</span><span class="sep" style="color:rgba(255,255,255,.4)">→</span>
+      <span>DEPLOY</span>
+    </div>
+  </div>
+</section>
+
+<!-- 05. GIẢI PHÁP THEO NHU CẦU -->
+<section class="section section--white">
+  <div class="wrap">
+    <div class="split split-narrow" style="margin-bottom:var(--sp-5)">
+      <div class="rv">
+        <span class="eyebrow">Custom AI Solutions</span>
+        <h2 class="h2">Không phải mọi bài toán đều có một giải pháp có sẵn</h2>
+        <hr class="rule">
+        <p class="lead">
+          Với những nhu cầu đặc thù, VIETD có thể khảo sát và thiết kế giải pháp
+          dựa trên quy trình, dữ liệu, hệ thống hiện có và mục tiêu của từng tổ chức.
+        </p>
+      </div>
+      <div class="rv rv-d1">
+        <span class="eyebrow">Giải pháp có thể kết hợp</span>
+        <div class="grid" style="gap:.75rem">
+          <div class="eco-item"><span class="dot"></span><span>AI<small>Phân tích, xử lý và tạo nội dung.</small></span></div>
+          <div class="eco-item"><span class="dot"></span><span>AI Agent<small>Hỗ trợ tra cứu và thực hiện tác vụ theo nghiệp vụ.</small></span></div>
+          <div class="eco-item"><span class="dot"></span><span>Workflow &amp; Automation<small>Kết nối các bước xử lý thành quy trình tự động.</small></span></div>
+          <div class="eco-item"><span class="dot"></span><span>Website / Web App<small>Xây dựng nền tảng phục vụ trải nghiệm hoặc vận hành.</small></span></div>
+          <div class="eco-item"><span class="dot"></span><span>Data &amp; Knowledge<small>Tổ chức và khai thác dữ liệu, tài liệu và tri thức nội bộ.</small></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IN PRACTICE -->
+<section class="section section--ivory2">
+  <div class="wrap">
+    <div class="split">
+      <div class="rv">
+        <span class="eyebrow">Năng lực công nghệ</span>
+        <h2 class="h2">Hợp tác triển khai công nghệ số</h2>
+        <hr class="rule">
+        <p class="lead mb-3">
+          VIETD đã tham gia hợp tác triển khai công nghệ số cùng các đơn vị,
+          tổ chức; đồng thời ký kết hợp tác với Công viên Phần mềm Quân đội (ASP)
+          nhằm đồng hành cùng doanh nghiệp trong chuyển đổi số.
+        </p>
+        <div class="btn-row">
+          <button class="btn btn-primary" data-consult data-context="solution" type="button">
+            Trao đổi về bài toán của bạn
+            <svg class="arw" width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="rv rv-d1">
+        <div class="grid" style="gap:var(--sp-3)">
+          <figure class="shot" style="margin:0;aspect-ratio:16/9">
+            <img src="assets/act-05.jpg" alt="Lễ ký kết hợp tác giữa Công viên Phần mềm Quân đội (ASP) và VIETD" loading="lazy">
+            <figcaption class="shot-cap">
+              <strong>Ký kết hợp tác ASP và VIETD</strong>
+              <span>Đồng hành cùng doanh nghiệp</span>
+            </figcaption>
+          </figure>
+          <figure class="shot" style="margin:0;aspect-ratio:16/9">
+            <img src="assets/act-03.jpg" alt="VIETD tham gia hợp tác triển khai công nghệ số tại tỉnh Khánh Hoà" loading="lazy">
+            <figcaption class="shot-cap">
+              <strong>Hợp tác triển khai công nghệ số</strong>
+              <span>Bộ Quốc Phòng tỉnh Khánh Hoà</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section--ivory">
+  <div class="wrap">
+    <div class="cta-band rv">
+      <div class="cta-inner">
+        <span class="eyebrow" style="color:var(--gold-light)">Bắt đầu</span>
+        <h2 class="h2">Bắt đầu từ bài toán cần giải quyết</h2>
+        <p>
+          VIETD đồng hành cùng doanh nghiệp và tổ chức trong việc xác định cơ hội
+          ứng dụng AI, lựa chọn phạm vi ưu tiên và xây dựng hướng triển khai
+          phù hợp với thực tế vận hành.
+        </p>
+        <div class="btn-row">
+          <button class="btn btn-primary" data-consult data-context="solution" type="button" style="background:#fff;color:var(--burgundy);box-shadow:0 8px 24px rgba(0,0,0,.22)">Liên hệ với chúng tôi</button>
+          <a class="btn btn-ghost-lt" href="dao-tao-ai.html">Xem Đào tạo AI</a>
+        </div>
+        <p class="cta-note">Chia sẻ nhu cầu để VIETD chuẩn bị phương án trao đổi phù hợp.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="ft-grid">
+      <div>
+        <div class="ft-brand">
+          <img src="assets/vietd-logo.png" alt="Logo VIETD">
+          <span><b>VIỆN ĐÀO TẠO &amp; PHÁT TRIỂN<br>DOANH NHÂN VIỆT NAM</b><span>Beyond Learning</span></span>
+        </div>
+        <p class="ft-tag">Phát triển năng lực AI. Kiến tạo năng lực vận hành mới.</p>
+      </div>
+      <div>
+        <h4>Về VIETD</h4>
+        <div class="ft-links">
+          <a href="ve-vietd.html#tong-quan">Tổng quan</a>
+          <a href="ve-vietd.html#lanh-dao">Ban lãnh đạo</a>
+          <a href="ve-vietd.html#he-sinh-thai">Hệ sinh thái</a>
+          <a href="ve-vietd.html#doi-tac">Đối tác &amp; Hoạt động</a>
+        </div>
+      </div>
+      <div>
+        <h4>Chương trình</h4>
+        <div class="ft-links">
+          <a href="dao-tao-ai.html">Đào tạo AI</a>
+          <a href="giai-phap-ai.html">Giải pháp AI</a>
+          <a href="tin-tuc.html">Tin tức &amp; Chia sẻ</a>
+          <a href="#" data-consult>Liên hệ với chúng tôi</a>
+        </div>
+      </div>
+      <div>
+        <h4>Liên hệ</h4>
+        <ul class="ft-contact">
+          <li><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2.5c-3 0-5.5 2.4-5.5 5.4 0 4 5.5 9.6 5.5 9.6s5.5-5.6 5.5-9.6c0-3-2.5-5.4-5.5-5.4z" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="8" r="2" stroke="currentColor" stroke-width="1.5"/></svg><span><strong style="color:#fff;font-weight:600">Trụ sở chính</strong><br>155-157 An Dương Vương, P. An Đông, TP. Hồ Chí Minh</span></li>
+          <li><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2.5c-3 0-5.5 2.4-5.5 5.4 0 4 5.5 9.6 5.5 9.6s5.5-5.6 5.5-9.6c0-3-2.5-5.4-5.5-5.4z" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="8" r="2" stroke="currentColor" stroke-width="1.5"/></svg><span><strong style="color:#fff;font-weight:600">VP giao dịch</strong><br>Số 6 Thái Văn Lung, P. Sài Gòn, TP. Hồ Chí Minh</span></li>
+          <li><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="2.5" y="4.5" width="15" height="11" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M3 6l7 5 7-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><a href="mailto:viendoanhnhan.vietd@gmail.com">viendoanhnhan.vietd@gmail.com</a></li>
+          <li><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.5"/><path d="M2.5 10h15M10 2.5c2 2.2 3 4.7 3 7.5s-1 5.3-3 7.5c-2-2.2-3-4.7-3-7.5s1-5.3 3-7.5z" stroke="currentColor" stroke-width="1.5"/></svg><a href="https://vietd.edu.vn">vietd.edu.vn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>© <span data-year>2026</span> Viện Đào tạo &amp; Phát triển Doanh nhân Việt Nam (VIETD). Bảo lưu mọi quyền.</span>
+      <a class="ft-totop" href="#top">Về đầu trang
+        <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 14V2M3 7l5-5 5 5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<div class="modal" id="consult-modal" role="dialog" aria-modal="true" aria-labelledby="cm-title" aria-hidden="true">
+  <div class="modal-panel">
+    <div class="modal-head">
+      <button class="modal-close" data-close type="button" aria-label="Đóng">✕</button>
+      <h2 id="cm-title">Liên hệ với chúng tôi</h2>
+      <p>Vui lòng để lại thông tin để VIETD hiểu nhu cầu và chuẩn bị nội dung trao đổi phù hợp.</p>
+    </div>
+    <div class="modal-body">
+      <form data-consult-form novalidate>
+        <div class="field">
+          <label for="f-name">Họ và tên <span class="req">*</span></label>
+          <input id="f-name" name="name" type="text" required placeholder="Nguyễn Văn A" autocomplete="name">
+          <span class="field-err">Vui lòng nhập họ và tên.</span>
+        </div>
+        <div class="field">
+          <label for="f-org">Doanh nghiệp / Tổ chức <span class="req">*</span></label>
+          <input id="f-org" name="org" type="text" required placeholder="Tên đơn vị" autocomplete="organization">
+          <span class="field-err">Vui lòng nhập tên doanh nghiệp hoặc tổ chức.</span>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="f-tel">Số điện thoại <span class="req">*</span></label>
+            <input id="f-tel" name="tel" type="tel" required placeholder="09xx xxx xxx" autocomplete="tel">
+            <span class="field-err">Vui lòng nhập số điện thoại hợp lệ.</span>
+          </div>
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" placeholder="email@donvi.vn" autocomplete="email">
+            <span class="field-err">Email chưa đúng định dạng.</span>
+          </div>
+        </div>
+        <div class="field">
+          <label>Nhu cầu tư vấn <span class="req">*</span></label>
+          <div class="radio-row">
+            <label class="radio"><input type="radio" name="need" value="training" required><span class="rd"></span> Đào tạo AI</label>
+            <label class="radio"><input type="radio" name="need" value="solution"><span class="rd"></span> Giải pháp AI</label>
+            <label class="radio"><input type="radio" name="need" value="other"><span class="rd"></span> Khác</label>
+          </div>
+          <span class="field-err">Vui lòng chọn nhu cầu tư vấn.</span>
+        </div>
+        <div class="field">
+          <label for="f-msg">Nội dung cần trao đổi</label>
+          <textarea id="f-msg" name="message" placeholder="Chia sẻ ngắn về nhu cầu, quy mô đội ngũ hoặc bài toán đang quan tâm…"></textarea>
+        </div>
+        <button class="btn btn-primary btn-block" type="submit">Gửi yêu cầu tư vấn</button>
+        <p class="form-note">Thông tin của Quý vị được VIETD tiếp nhận và sử dụng cho mục đích tư vấn.</p>
+      </form>
+      <div class="form-ok">
+        <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6.5L9.5 17 4 11.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3>Đã ghi nhận yêu cầu</h3>
+        <p>Cảm ơn Quý vị đã liên hệ VIETD. Đội ngũ VIETD sẽ xem xét nhu cầu và phản hồi trong thời gian sớm nhất.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/main.js"></script>
+</body>
+</html>
