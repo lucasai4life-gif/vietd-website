@@ -407,7 +407,30 @@ ul,ol{margin:0; padding:0; list-style:none}
   box-shadow:0 12px 28px -4px rgba(25,27,31,.11), 0 4px 10px rgba(213,168,75,.1);
 }
 .hero-float--tl{top:-14px; left:-14px}
-.hero-float--br{bottom:-16px; right:-14px; display:flex; align-items:center; gap:.7rem}
+.hero-float--br{
+  bottom:-16px; right:-14px; display:flex; align-items:center; gap:.7rem;
+  animation:subtleFloat 4s ease-in-out infinite;
+  will-change:transform;
+}
+.hero-float--br:hover{
+  animation-play-state:paused;
+}
+
+@keyframes subtleFloat{
+  0%, 100%{
+    transform:translateY(0);
+    box-shadow:0 8px 24px -4px rgba(25,27,31,.08), 0 2px 6px rgba(25,27,31,.03);
+  }
+  50%{
+    transform:translateY(-5px);
+    box-shadow:0 14px 30px -4px rgba(25,27,31,.12), 0 4px 10px rgba(25,27,31,.04);
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-float--br{
+    animation:none !important;
+  }
+}
 .hero-float .n{font-size:1.32rem; font-weight:800; color:var(--burgundy); line-height:1}
 .hero-float .l{font-size:.7rem; color:var(--slate); font-weight:600; letter-spacing:.02em}
 .hero-float .ic{
