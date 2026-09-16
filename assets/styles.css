@@ -1081,9 +1081,8 @@ ul,ol{margin:0; padding:0; list-style:none}
   border-radius:var(--r-md); padding:clamp(1rem,2.5vw,2rem); overflow:hidden;
 }
 .logo-wall img{
-  width:100%; filter:grayscale(100%) opacity(.62); transition:filter .4s var(--ease);
+  width:100%; filter:none; opacity:1;
 }
-.logo-wall:hover img{filter:grayscale(0%) opacity(1)}
 
 /* ==========================  PARTNER MARQUEE (File B pattern)  ========================== */
 .marquee-heading{
@@ -1153,16 +1152,13 @@ ul,ol{margin:0; padding:0; list-style:none}
   width:auto;
   max-width:120px;
   object-fit:contain;
-  filter:grayscale(100%) opacity(.75);
-  transition:filter .3s var(--ease), opacity .3s var(--ease);
+  filter:none;
+  opacity:1;
 }
 .logo-item:hover{
   border-color:var(--gold);
   box-shadow:0 6px 18px rgba(213,168,75,.22);
   transform:translateY(-2px);
-}
-.logo-item:hover img{
-  filter:grayscale(0%) opacity(1);
 }
 @media(max-width:768px){
   .marquee-heading{
