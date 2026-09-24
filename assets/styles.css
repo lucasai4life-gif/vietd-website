@@ -347,6 +347,11 @@ ul,ol{margin:0; padding:0; list-style:none}
   border:2px solid var(--ivory); margin-left:-8px;
   object-fit:cover; background:var(--border);
 }
+.trust-avatar.trust-logo{
+  object-fit:contain;
+  background:#fff;
+  padding:3px;
+}
 .trust-avatar-badge{
   background:var(--blue-corp); color:#fff;
   display:flex; align-items:center; justify-content:center;
