@@ -127,6 +127,55 @@
     });
   }
 
+  /* ---------------- Certificate Lightbox ---------------- */
+  var certLightbox = $('#cert-lightbox');
+  var certLastFocus = null;
+
+  function openCertLightbox() {
+    if (!certLightbox) return;
+    certLastFocus = doc.activeElement;
+    certLightbox.classList.add('is-open');
+    certLightbox.setAttribute('aria-hidden', 'false');
+    doc.body.style.overflow = 'hidden';
+    var closeBtn = certLightbox.querySelector('.cert-lightbox-close, [data-close]');
+    if (closeBtn) closeBtn.focus();
+  }
+
+  function closeCertLightbox() {
+    if (!certLightbox) return;
+    certLightbox.classList.remove('is-open');
+    certLightbox.setAttribute('aria-hidden', 'true');
+    if (!nav || !nav.classList.contains('is-open')) {
+      doc.body.style.overflow = '';
+    }
+    if (certLastFocus && certLastFocus.focus) {
+      certLastFocus.focus();
+    }
+  }
+
+  $$('[data-open-cert]').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      openCertLightbox();
+    });
+  });
+
+  if (certLightbox) {
+    $$('[data-close]', certLightbox).forEach(function (el) {
+      el.addEventListener('click', closeCertLightbox);
+    });
+    certLightbox.addEventListener('click', function (e) {
+      if (e.target === certLightbox || e.target.classList.contains('cert-lightbox-backdrop')) {
+        closeCertLightbox();
+      }
+    });
+    doc.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && certLightbox.classList.contains('is-open')) {
+        closeCertLightbox();
+      }
+    });
+  }
+
   /* ---------------- Accordions ---------------- */
   $$('.acc-h').forEach(function (h) {
     h.addEventListener('click', function () {
