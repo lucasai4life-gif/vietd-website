@@ -116,6 +116,8 @@ ${message ? escapeHtml(message) : "<i>(Không có ghi chú thêm)</i>"}
       }
     } else {
       telegramError = "Chưa cấu hình TELEGRAM_BOT_TOKEN hoặc TELEGRAM_CHAT_ID trong Environment Variables trên Cloudflare.";
+    }
+
     // 5. Lưu trữ vào Cloudflare D1 Database
     let d1Saved = false;
     if (env.DB) {
