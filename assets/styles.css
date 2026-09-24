@@ -2197,6 +2197,17 @@ ul,ol{margin:0; padding:0; list-style:none}
   align-items:center;
   justify-content:center;
 }
+.expert-avatar-wrap img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+  display:block;
+  transition:transform .4s var(--ease);
+}
+.expert-card:hover .expert-avatar-wrap img{
+  transform:scale(1.04);
+}
 .expert-avatar-placeholder{
   position:relative;
   width:100%;
@@ -2246,6 +2257,8 @@ ul,ol{margin:0; padding:0; list-style:none}
   font-weight:600;
   color:var(--blue-corp);
   margin-bottom:.6rem;
+  min-height:2.35rem;
+  line-height:1.38;
 }
 .expert-field{
   font-size:var(--fs-xs);
@@ -2269,11 +2282,37 @@ ul,ol{margin:0; padding:0; list-style:none}
   color:var(--slate);
   border:1px solid var(--border);
 }
+.expert-cta{
+  display:inline-flex;
+  align-items:center;
+  gap:.35rem;
+  font-size:var(--fs-xs);
+  font-weight:700;
+  color:var(--blue-corp);
+  text-decoration:none;
+  margin-top:auto;
+  padding-top:.45rem;
+  transition:color .2s var(--ease), gap .2s var(--ease);
+}
+.expert-cta:hover{
+  color:var(--burgundy);
+  gap:.55rem;
+}
+.expert-cta .arw,
+.expert-cta svg{
+  flex-shrink:0;
+  transition:transform .2s var(--ease);
+}
+.expert-cta:hover .arw,
+.expert-cta:hover svg{
+  transform:translateX(2px);
+}
 @media(max-width:940px){
   .expert-grid{grid-template-columns:repeat(2, 1fr)}
 }
 @media(max-width:560px){
   .expert-grid{grid-template-columns:1fr}
+  .expert-role{min-height:auto}
 }
 
 /* ==========================  AI SOLUTIONS POLISH (giai-phap-ai.html)  ========================== */
