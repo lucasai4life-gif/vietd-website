@@ -2003,6 +2003,50 @@ ul,ol{margin:0; padding:0; list-style:none}
   padding:var(--sp-4) 0; border-top:1px solid rgba(255,255,255,.16);
   font-size:var(--fs-xs); color:rgba(255,255,255,.55);
 }
+.ft-credit{
+  display:inline-flex;
+  align-items:center;
+  gap:.45rem;
+  font-size:var(--fs-xs);
+  color:rgba(255,255,255,.55);
+}
+.ft-credit-icon{
+  display:inline-flex;
+  align-items:center;
+  line-height:1;
+}
+.ft-credit-logo{
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  object-fit:cover;
+  display:block;
+  transition:transform .2s var(--ease), opacity .2s var(--ease);
+}
+.ft-credit-icon:hover .ft-credit-logo{
+  transform:scale(1.1);
+  opacity:.95;
+}
+.ft-credit a.ft-credit-link{
+  color:var(--gold-light);
+  font-weight:600;
+  transition:color .2s var(--ease);
+}
+.ft-credit a.ft-credit-link:hover{
+  color:#fff;
+  text-decoration:underline;
+}
+@media(max-width:768px){
+  .ft-bottom{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:.65rem;
+  }
+  .ft-bottom .ft-totop{
+    padding-top:.2rem;
+  }
+}
+
 .ft-social{display:flex; gap:.5rem}
 .ft-social a{
   display:grid; place-items:center; width:34px; height:34px;
@@ -2231,7 +2275,7 @@ ul,ol{margin:0; padding:0; list-style:none}
 .about-ed-item{
   display:grid;
   grid-template-columns:2.25rem 1fr;
-  align-items:baseline;
+  align-items:start;
   gap:1.25rem;
   padding-bottom:1.6rem;
   margin-bottom:1.6rem;
@@ -2249,6 +2293,7 @@ ul,ol{margin:0; padding:0; list-style:none}
   color:var(--burgundy);
   line-height:1;
   font-variant-numeric:tabular-nums;
+  padding-top:5px;
 }
 .about-ed-body p{
   font-size:var(--fs-base);
