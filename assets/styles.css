@@ -1502,6 +1502,55 @@ ul,ol{margin:0; padding:0; list-style:none}
 .cta-band p{color:rgba(255,255,255,.82); margin-bottom:var(--sp-4); max-width:60ch}
 .cta-note{font-size:var(--fs-xs); color:rgba(255,255,255,.62); margin-top:var(--sp-3)}
 
+/* ==========================  CTA BAND FOCUS (ve-vietd, dao-tao-ai, giai-phap-ai)  ========================== */
+.cta-band--focus{
+  padding:clamp(2.25rem, 4.5vw, 3.85rem) clamp(1.75rem, 4.5vw, 3.75rem);
+}
+.cta-band--focus .cta-inner{
+  position:relative;
+  z-index:1;
+  width:100%;
+  max-width:1080px;
+  margin-inline:auto;
+  text-align:left;
+}
+.cta-band--focus h2{
+  color:#fff;
+  max-width:980px;
+  margin-bottom:var(--sp-3);
+  line-height:1.26;
+}
+.cta-band--focus p{
+  color:rgba(255,255,255,.85);
+  max-width:76ch;
+  margin-bottom:var(--sp-4);
+  font-size:clamp(1.02rem, .96rem + .3vw, 1.16rem);
+  line-height:1.72;
+}
+.cta-band--focus .btn-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:var(--sp-3);
+  align-items:center;
+  justify-content:flex-start;
+}
+.cta-band--focus .cta-note{
+  font-size:var(--fs-xs);
+  color:rgba(255,255,255,.65);
+  margin-top:var(--sp-3);
+}
+@media(max-width:768px){
+  .cta-band--focus{
+    padding:var(--sp-4) var(--sp-3);
+  }
+  .cta-band--focus .cta-inner{
+    max-width:100%;
+  }
+  .cta-band--focus p{
+    max-width:100%;
+  }
+}
+
 /* ==========================  CTA BAND (HOMEPAGE EXECUTIVE PANEL)  ========================== */
 .cta-band--home{
   position:relative;
