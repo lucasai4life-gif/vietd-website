@@ -1,7 +1,26 @@
+# Operating System & Temp
 .DS_Store
+Thumbs.db
+*.tmp
+*.temp
+*~
+
+# Build & Deploy Cache
 .wrangler/
 dist/
 node_modules/
 *.log
 VIETD_Web_Production/
 *.zip
+
+# Screenshots & Media Temp
+*.png.tmp
+screenshot*.png
+Ảnh màn hình*.png
+Ảnh màn hình*.png
+
+# Internal Dev & Non-production docs
+_backup-assets/
+GEMINI.md
+SOURCE-AUDIT.md
+_validate.py
