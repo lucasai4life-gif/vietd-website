@@ -25,27 +25,49 @@
   /* ---------------- Mobile nav ---------------- */
   var toggle = $('.nav-toggle');
   var nav    = $('.nav');
+
+  function setMobileNav(open) {
+    if (!nav || !toggle) return;
+    nav.classList.toggle('is-open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Đóng menu' : 'Mở menu');
+    if (header) header.classList.toggle('is-menu-open', open);
+    doc.body.style.overflow = open ? 'hidden' : '';
+    doc.documentElement.style.overflow = open ? 'hidden' : '';
+  }
+
   if (toggle && nav) {
     toggle.addEventListener('click', function () {
-      var open = nav.classList.toggle('is-open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      doc.body.style.overflow = open ? 'hidden' : '';
+      var open = !nav.classList.contains('is-open');
+      setMobileNav(open);
     });
     // Close on link tap (mobile)
     $$('.nav a', nav).forEach(function (a) {
       a.addEventListener('click', function () {
         if (window.innerWidth <= 1080 && !a.parentElement.classList.contains('nav-item')) {
-          nav.classList.remove('is-open');
-          toggle.setAttribute('aria-expanded', 'false');
-          doc.body.style.overflow = '';
+          setMobileNav(false);
         }
       });
     });
+    // Drawer CTA button tap (mobile)
+    var navCta = $('.nav-cta', nav);
+    if (navCta) {
+      navCta.addEventListener('click', function () {
+        if (window.innerWidth <= 1080) {
+          setMobileNav(false);
+        }
+      });
+    }
+    // Close on Escape
+    doc.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && nav.classList.contains('is-open') && (!modal || !modal.classList.contains('is-open'))) {
+        setMobileNav(false);
+        toggle.focus();
+      }
+    });
     window.addEventListener('resize', function () {
       if (window.innerWidth > 1080 && nav.classList.contains('is-open')) {
-        nav.classList.remove('is-open');
-        toggle.setAttribute('aria-expanded', 'false');
-        doc.body.style.overflow = '';
+        setMobileNav(false);
       }
     });
   }
@@ -59,7 +81,11 @@
       if (window.innerWidth <= 1080) {
         e.preventDefault();
         var wasOpen = item.classList.contains('is-open');
-        $$('.nav-item.is-open').forEach(function (o) { o.classList.remove('is-open'); });
+        $$('.nav-item.is-open').forEach(function (o) {
+          o.classList.remove('is-open');
+          var l = o.querySelector('.nav-link');
+          if (l) l.setAttribute('aria-expanded', 'false');
+        });
         item.classList.toggle('is-open', !wasOpen);
         link.setAttribute('aria-expanded', !wasOpen ? 'true' : 'false');
       }
@@ -75,9 +101,13 @@
   function openModal(src) {
     if (!modal) return;
     lastFocus = doc.activeElement;
+    if (nav && nav.classList.contains('is-open')) {
+      setMobileNav(false);
+    }
     modal.classList.add('is-open');
     modal.setAttribute('aria-hidden', 'false');
     doc.body.style.overflow = 'hidden';
+    doc.documentElement.style.overflow = 'hidden';
 
     // If invoked from a specific context, pre-select the need
     var ctx = src && src.getAttribute ? src.getAttribute('data-context') : null;
@@ -95,7 +125,10 @@
     if (!modal) return;
     modal.classList.remove('is-open');
     modal.setAttribute('aria-hidden', 'true');
-    if (!nav || !nav.classList.contains('is-open')) doc.body.style.overflow = '';
+    if (!nav || !nav.classList.contains('is-open')) {
+      doc.body.style.overflow = '';
+      doc.documentElement.style.overflow = '';
+    }
     if (lastFocus && lastFocus.focus) lastFocus.focus();
   }
 
@@ -137,6 +170,7 @@
     certLightbox.classList.add('is-open');
     certLightbox.setAttribute('aria-hidden', 'false');
     doc.body.style.overflow = 'hidden';
+    doc.documentElement.style.overflow = 'hidden';
     var closeBtn = certLightbox.querySelector('.cert-lightbox-close, [data-close]');
     if (closeBtn) closeBtn.focus();
   }
@@ -147,6 +181,7 @@
     certLightbox.setAttribute('aria-hidden', 'true');
     if (!nav || !nav.classList.contains('is-open')) {
       doc.body.style.overflow = '';
+      doc.documentElement.style.overflow = '';
     }
     if (certLastFocus && certLastFocus.focus) {
       certLastFocus.focus();
