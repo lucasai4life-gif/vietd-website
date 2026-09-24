@@ -2023,10 +2023,10 @@ ul,ol{margin:0; padding:0; list-style:none}
   line-height:1;
 }
 .ft-credit-logo{
-  width:18px;
-  height:18px;
-  border-radius:50%;
-  object-fit:cover;
+  height:26px;
+  width:auto;
+  border-radius:0;
+  object-fit:contain;
   display:block;
   transition:transform .2s var(--ease), opacity .2s var(--ease);
 }
