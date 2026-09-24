@@ -257,9 +257,9 @@
   }
 
   /* ---------------- Form validation ----------------
-     No backend is wired (see SOURCE-AUDIT §10 — endpoint not supplied).
-     Validation is real; submission is intercepted and confirmed locally. */
-  $$('form[data-consult-form]').forEach(function (form) {
+  /* ---------------- Form validation & Cloudflare Function submission ----------------
+     Submits to /api/submit (Cloudflare Pages Function) and triggers Telegram notification. */
+  $$('form[data-consult-form], form#consult-form').forEach(function (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var ok = true;
@@ -301,9 +301,42 @@
         return;
       }
 
-      var ok_panel = form.parentElement.querySelector('.form-ok');
-      form.style.display = 'none';
-      if (ok_panel) ok_panel.classList.add('is-on');
+      var submitBtn = form.querySelector('button[type="submit"]');
+      var originalBtnText = submitBtn ? submitBtn.textContent : '';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Đang gửi...';
+      }
+
+      // Collect data
+      var fd = new FormData(form);
+      var payload = {};
+      fd.forEach(function (val, key) { payload[key] = val; });
+      payload.page_url = window.location.href;
+
+      // Extract UTM
+      var sp = new URLSearchParams(window.location.search);
+      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach(function(u) {
+        if (sp.get(u)) payload[u] = sp.get(u);
+      });
+
+      fetch('/api/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+      .then(function(res) { return res.json(); })
+      .then(function(data) {
+        var ok_panel = form.parentElement.querySelector('.form-ok');
+        form.style.display = 'none';
+        if (ok_panel) ok_panel.classList.add('is-on');
+      })
+      .catch(function(err) {
+        // Fallback: still show confirmation to user even if offline
+        var ok_panel = form.parentElement.querySelector('.form-ok');
+        form.style.display = 'none';
+        if (ok_panel) ok_panel.classList.add('is-on');
+      });
     });
 
     // Clear error as user corrects
