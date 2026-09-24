@@ -116,9 +116,23 @@ ${message ? escapeHtml(message) : "<i>(Không có ghi chú thêm)</i>"}
       }
     } else {
       telegramError = "Chưa cấu hình TELEGRAM_BOT_TOKEN hoặc TELEGRAM_CHAT_ID trong Environment Variables trên Cloudflare.";
+    // 5. Lưu trữ vào Cloudflare D1 Database
+    let d1Saved = false;
+    if (env.DB) {
+      try {
+        await env.DB.prepare(
+          `INSERT INTO leads (name, org, tel, email, need, message, utm_source, utm_campaign, page_url, client_ip)
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+        )
+        .bind(name, org, tel, email, needDisplay, message, utm_source, utm_campaign, page_url, clientIp)
+        .run();
+        d1Saved = true;
+      } catch (dbErr) {
+        console.error("Lỗi lưu D1 Database:", dbErr);
+      }
     }
 
-    // 5. Dự phòng: Gửi webhook lưu vào Google Sheets (nếu cấu hình)
+    // 6. Dự phòng: Gửi webhook lưu vào Google Sheets (nếu cấu hình)
     if (env.GOOGLE_SHEET_WEBHOOK) {
       try {
         await fetch(env.GOOGLE_SHEET_WEBHOOK, {
@@ -149,6 +163,7 @@ ${message ? escapeHtml(message) : "<i>(Không có ghi chú thêm)</i>"}
         success: true,
         message: "Đã ghi nhận yêu cầu thành công!",
         telegram_sent: telegramSent,
+        d1_saved: d1Saved,
         telegram_error: telegramError
       }),
       { status: 200, headers: { "Content-Type": "application/json" } }
