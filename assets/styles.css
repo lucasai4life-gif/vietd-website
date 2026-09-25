@@ -2013,8 +2013,8 @@ ul,ol{margin:0; padding:0; list-style:none}
 .ft-credit{
   display:inline-flex;
   align-items:center;
-  gap:.45rem;
-  font-size:var(--fs-xs);
+  gap:.42rem;
+  font-size:.72rem;
   color:rgba(255,255,255,.55);
 }
 .ft-credit-icon{
@@ -2023,7 +2023,7 @@ ul,ol{margin:0; padding:0; list-style:none}
   line-height:1;
 }
 .ft-credit-logo{
-  height:26px;
+  height:21px;
   width:auto;
   border-radius:0;
   object-fit:contain;
