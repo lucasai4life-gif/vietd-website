@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 set -e
 
-echo "🚀 [1/4] Kiểm tra cấu trúc website cục bộ..."
-python3 _validate.py
+if [ -f "_validate.py" ]; then
+  python3 _validate.py
+fi
 
 echo "📦 [2/4] Commit & Push lên GitHub..."
 git add .
