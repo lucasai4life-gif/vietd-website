@@ -49,7 +49,7 @@ export async function onRequestPost(context) {
     const needLabels = {
       "training": "🎓 Đào tạo AI",
       "solution": "🤖 Giải pháp AI",
-      "trade-promotion": "🌐 Xúc tiến thương mại",
+      "trade-promotion": "🌐 Xúc tiến & Tư vấn doanh nghiệp",
       "other": "🤝 Hợp tác khác"
     };
     const needDisplay = needLabels[need] || need;
