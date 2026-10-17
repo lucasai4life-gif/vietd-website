@@ -2579,6 +2579,24 @@ ul,ol{margin:0; padding:0; list-style:none}
 .expert-cta:hover svg{
   transform:translateX(2px);
 }
+.expert-cta--disabled,
+.expert-cta[aria-disabled="true"]{
+  opacity:.5;
+  cursor:default;
+  pointer-events:none;
+  user-select:none;
+}
+.expert-cta--disabled:hover,
+.expert-cta[aria-disabled="true"]:hover{
+  color:var(--blue-corp);
+  gap:.35rem;
+}
+.expert-cta--disabled:hover .arw,
+.expert-cta--disabled:hover svg,
+.expert-cta[aria-disabled="true"]:hover .arw,
+.expert-cta[aria-disabled="true"]:hover svg{
+  transform:none;
+}
 @media(max-width:940px){
   .expert-grid{grid-template-columns:repeat(2, 1fr)}
 }
