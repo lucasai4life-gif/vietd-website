@@ -1298,6 +1298,16 @@ ul,ol{margin:0; padding:0; list-style:none}
 .team-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:var(--sp-4)}
 @media(max-width:900px){ .team-grid{grid-template-columns:repeat(2,1fr)} }
 @media(max-width:560px){ .team-grid{grid-template-columns:1fr} }
+.team-grid--2{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:var(--sp-4);
+  max-width:800px;
+  margin-inline:auto;
+}
+@media(max-width:640px){
+  .team-grid--2{grid-template-columns:1fr}
+}
 .member{
   display:flex; align-items:center; gap:var(--sp-3);
   background:var(--white); border:1px solid var(--border); border-radius:var(--r-md);
@@ -1327,9 +1337,18 @@ ul,ol{margin:0; padding:0; list-style:none}
 .member-body .cred{font-size:var(--fs-xs); font-weight:700; color:var(--burgundy); letter-spacing:.02em}
 .member-body .role{font-size:var(--fs-xs); color:var(--slate)}
 
-/* Featured leaders (Chủ tịch / Viện trưởng) */
+/* Featured leaders (Viện trưởng) */
 .leadership-top{display:grid; grid-template-columns:1fr 1fr; gap:var(--sp-4); margin-bottom:var(--sp-5)}
 @media(max-width:760px){ .leadership-top{grid-template-columns:1fr} }
+.leadership-top--single{
+  display:flex;
+  justify-content:center;
+  margin-bottom:var(--sp-5);
+}
+.leadership-top--single .lead-feat{
+  max-width:540px;
+  width:100%;
+}
 .lead-feat{
   display:flex; gap:var(--sp-3); align-items:center;
   padding:var(--sp-4); background:var(--white);
