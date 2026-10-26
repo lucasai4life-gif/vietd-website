@@ -11,7 +11,123 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add("js");</script>
-<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/styles.css?v=20261027c">
+<style id="leadership-styles">
+.leadership-grid{
+  display:grid !important;
+  grid-template-columns:repeat(3, minmax(0, 1fr)) !important;
+  gap:var(--sp-4, 1.5rem) !important;
+  align-items:stretch !important;
+  margin-bottom:var(--sp-5, 2rem) !important;
+}
+.leadership-card{
+  background:var(--white, #fff) !important;
+  border:1px solid var(--border, #E8E4DC) !important;
+  border-top:3px solid var(--border, #E8E4DC) !important;
+  border-radius:var(--r-md, 14px) !important;
+  padding:2rem 1.25rem 1.75rem !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  text-align:center !important;
+  height:100% !important;
+  box-sizing:border-box !important;
+  transition:transform .3s var(--ease-out, ease-out), box-shadow .3s var(--ease, ease), border-color .3s var(--ease, ease);
+}
+.leadership-card:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow-md, 0 8px 24px rgba(25,27,31,.08));
+  border-color:rgba(128,14,27,.25) !important;
+}
+.leadership-card--lead{
+  border-top:3px solid var(--burgundy, #981B22) !important;
+  border-color:rgba(128,14,27,.22) !important;
+  box-shadow:0 4px 18px rgba(128,14,27,.07);
+}
+.leadership-avatar{
+  position:relative !important;
+  width:120px !important;
+  height:152px !important;
+  max-width:120px !important;
+  max-height:152px !important;
+  border-radius:var(--r-sm, 8px) !important;
+  overflow:hidden !important;
+  background:var(--ivory-2, #F5F1EA) !important;
+  box-shadow:var(--shadow-sm, 0 2px 8px rgba(25,27,31,.06)) !important;
+  border:1px solid rgba(25,27,31,.08) !important;
+  margin-bottom:1.15rem !important;
+  flex:none !important;
+}
+.leadership-avatar img{
+  width:100% !important;
+  height:100% !important;
+  max-width:100% !important;
+  max-height:100% !important;
+  object-fit:cover !important;
+  object-position:center 20% !important;
+  display:block !important;
+  transition:transform .4s var(--ease, ease);
+}
+.leadership-card:hover .leadership-avatar img{
+  transform:scale(1.05);
+}
+.leadership-name{
+  font-size:1.05rem !important;
+  font-weight:700 !important;
+  color:var(--charcoal, #191B1F) !important;
+  margin:0 0 .35rem 0 !important;
+  line-height:1.32 !important;
+  letter-spacing:-.01em !important;
+  display:block !important;
+  width:100% !important;
+}
+.leadership-cred{
+  font-size:var(--fs-xs, 0.78rem) !important;
+  font-weight:700 !important;
+  color:var(--burgundy, #981B22) !important;
+  letter-spacing:.02em !important;
+  margin:0 0 .85rem 0 !important;
+  min-height:1.25rem !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:100% !important;
+}
+.leadership-role{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  padding:.35rem .95rem !important;
+  border-radius:var(--r-pill, 999px) !important;
+  background:var(--gold-soft, #F7F1E1) !important;
+  color:var(--burgundy-deep, #6E1015) !important;
+  font-size:.68rem !important;
+  font-weight:800 !important;
+  letter-spacing:.06em !important;
+  text-transform:uppercase !important;
+  margin-top:auto !important;
+}
+.leadership-role--lead{
+  background:var(--burgundy, #981B22) !important;
+  color:#fff !important;
+}
+
+@media(max-width:768px){
+  .leadership-grid{
+    grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
+    gap:var(--sp-3, 1rem) !important;
+  }
+}
+@media(max-width:560px){
+  .leadership-grid{
+    grid-template-columns:1fr !important;
+    gap:var(--sp-3, 1rem) !important;
+  }
+  .leadership-card{
+    padding:1.5rem 1rem !important;
+  }
+}
+</style>
 </head>
 <body id="top">
 
@@ -258,31 +374,31 @@
       <!-- 01: THS. LS. DƯƠNG MẠNH HÙNG — VIỆN TRƯỞNG -->
       <article class="leadership-card leadership-card--lead rv">
         <div class="leadership-avatar">
-          <img src="assets/leader-hung.jpg" alt="ThS. LS. Dương Mạnh Hùng — Viện trưởng VIETD">
+          <img src="assets/leader-hung.jpg" alt="ThS. LS. Dương Mạnh Hùng — Viện trưởng VIETD" width="120" height="152">
         </div>
         <h3 class="leadership-name">THS. LS. DƯƠNG MẠNH HÙNG</h3>
-        <span class="leadership-cred">Master MBA · Luật sư</span>
-        <span class="leadership-role leadership-role--lead">Viện trưởng VIETD</span>
+        <div class="leadership-cred">Master MBA · Luật sư</div>
+        <div class="leadership-role leadership-role--lead">Viện trưởng VIETD</div>
       </article>
 
       <!-- 02: TS. ĐỖ ĐỨC KHẢ — PHÓ VIỆN TRƯỞNG -->
       <article class="leadership-card rv rv-d1">
         <div class="leadership-avatar">
-          <img src="assets/leader-kha.jpg" alt="TS. Đỗ Đức Khả — Phó Viện trưởng VIETD">
+          <img src="assets/leader-kha.jpg" alt="TS. Đỗ Đức Khả — Phó Viện trưởng VIETD" width="120" height="152">
         </div>
         <h3 class="leadership-name">TS. ĐỖ ĐỨC KHẢ</h3>
-        <span class="leadership-cred">TS. Quản lý Kinh tế</span>
-        <span class="leadership-role">Phó Viện trưởng VIETD</span>
+        <div class="leadership-cred">TS. Quản lý Kinh tế</div>
+        <div class="leadership-role">Phó Viện trưởng VIETD</div>
       </article>
 
       <!-- 03: THS. ĐINH VĨNH CƯỜNG — PHÓ VIỆN TRƯỞNG -->
       <article class="leadership-card rv rv-d2">
         <div class="leadership-avatar">
-          <img src="assets/leader-cuong.jpg" alt="ThS. Đinh Vĩnh Cường — Phó Viện trưởng VIETD">
+          <img src="assets/leader-cuong.jpg" alt="ThS. Đinh Vĩnh Cường — Phó Viện trưởng VIETD" width="120" height="152">
         </div>
         <h3 class="leadership-name">THS. ĐINH VĨNH CƯỜNG</h3>
-        <span class="leadership-cred" aria-hidden="true">&nbsp;</span>
-        <span class="leadership-role">Phó Viện trưởng VIETD</span>
+        <div class="leadership-cred" aria-hidden="true">&nbsp;</div>
+        <div class="leadership-role">Phó Viện trưởng VIETD</div>
       </article>
     </div>
 

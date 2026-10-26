@@ -1301,7 +1301,7 @@ ul,ol{margin:0; padding:0; list-style:none}
    ============================================================ */
 .leadership-grid{
   display:grid;
-  grid-template-columns:repeat(3, 1fr);
+  grid-template-columns:repeat(3, minmax(0, 1fr));
   gap:var(--sp-4);
   align-items:stretch;
   margin-bottom:var(--sp-5);
@@ -1311,7 +1311,7 @@ ul,ol{margin:0; padding:0; list-style:none}
   border:1px solid var(--border);
   border-top:3px solid var(--border);
   border-radius:var(--r-md);
-  padding:1.85rem 1.35rem 1.65rem;
+  padding:2rem 1.25rem 1.75rem;
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -1334,6 +1334,8 @@ ul,ol{margin:0; padding:0; list-style:none}
   position:relative;
   width:120px;
   height:152px;
+  max-width:120px;
+  max-height:152px;
   border-radius:var(--r-sm);
   overflow:hidden;
   background:var(--ivory-2);
@@ -1345,6 +1347,8 @@ ul,ol{margin:0; padding:0; list-style:none}
 .leadership-avatar img{
   width:100%;
   height:100%;
+  max-width:100%;
+  max-height:100%;
   object-fit:cover;
   object-position:center 20%;
   display:block;
@@ -1357,26 +1361,29 @@ ul,ol{margin:0; padding:0; list-style:none}
   font-size:1.05rem;
   font-weight:700;
   color:var(--charcoal);
-  margin-bottom:.3rem;
+  margin:0 0 .35rem 0;
   line-height:1.32;
   letter-spacing:-.01em;
+  display:block;
+  width:100%;
 }
 .leadership-cred{
   font-size:var(--fs-xs);
   font-weight:700;
   color:var(--burgundy);
   letter-spacing:.02em;
-  margin-bottom:.75rem;
+  margin:0 0 .85rem 0;
   min-height:1.25rem;
   display:flex;
   align-items:center;
   justify-content:center;
+  width:100%;
 }
 .leadership-role{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  padding:.32rem .9rem;
+  padding:.35rem .95rem;
   border-radius:var(--r-pill);
   background:var(--gold-soft);
   color:var(--burgundy-deep);
@@ -1391,25 +1398,16 @@ ul,ol{margin:0; padding:0; list-style:none}
   color:#fff;
 }
 
-@media(max-width:960px){
+@media(max-width:768px){
   .leadership-grid{
-    grid-template-columns:repeat(2, 1fr);
+    grid-template-columns:repeat(2, minmax(0, 1fr));
     gap:var(--sp-3);
   }
-  .leadership-card--lead{
-    grid-column:1 / -1;
-    max-width:440px;
-    margin-inline:auto;
-    width:100%;
-  }
 }
-@media(max-width:600px){
+@media(max-width:560px){
   .leadership-grid{
     grid-template-columns:1fr;
     gap:var(--sp-3);
-  }
-  .leadership-card--lead{
-    max-width:100%;
   }
   .leadership-card{
     padding:1.5rem 1rem;
