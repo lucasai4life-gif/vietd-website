@@ -1332,8 +1332,8 @@ ul,ol{margin:0; padding:0; list-style:none}
 }
 .leadership-avatar{
   position:relative;
-  width:96px;
-  height:120px;
+  width:120px;
+  height:152px;
   border-radius:var(--r-sm);
   overflow:hidden;
   background:var(--ivory-2);
@@ -1376,7 +1376,7 @@ ul,ol{margin:0; padding:0; list-style:none}
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  padding:.28rem .8rem;
+  padding:.32rem .9rem;
   border-radius:var(--r-pill);
   background:var(--gold-soft);
   color:var(--burgundy-deep);
